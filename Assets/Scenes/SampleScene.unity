@@ -279,8 +279,8 @@ GameObject:
   - component: {fileID: 331664115}
   - component: {fileID: 331664114}
   - component: {fileID: 331664113}
-  - component: {fileID: 331664118}
   - component: {fileID: 331664117}
+  - component: {fileID: 331664118}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -382,7 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e4a4bf8f330d443b20de75fd798215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBar: {fileID: 336380663}
   _healthCount: 100
   _maxHealth: 100
 --- !u!114 &331664118
@@ -394,9 +393,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 331664112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e48f380f6d6f641925b0bd314d0b08, type: 3}
+  m_Script: {fileID: 11500000, guid: f4c18f81781a23f4a8bd2d1f4dcda9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBar: {fileID: 336380663}
   _health: {fileID: 331664117}
 --- !u!1 &336380659
 GameObject:
@@ -642,15 +642,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 331664118}
-        m_TargetAssemblyTypeName: HealtChanger, Assembly-CSharp
-        m_MethodName: AddTenHealthPoints
-        m_Mode: 1
+      - m_Target: {fileID: 331664117}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -796,15 +796,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 331664118}
-        m_TargetAssemblyTypeName: HealtChanger, Assembly-CSharp
-        m_MethodName: DeleteTenHealthPoints
-        m_Mode: 1
+      - m_Target: {fileID: 331664117}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
