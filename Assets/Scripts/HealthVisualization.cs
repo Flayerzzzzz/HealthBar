@@ -30,16 +30,16 @@ public class HealthVisualization : MonoBehaviour
         if (_healthRender != null)
         {
             StopCoroutine(_healthRender);
-            _healthRender = StartCoroutine(HealthRender());
         }
+        _healthRender = StartCoroutine(HealthRender());
     }
 
-    IEnumerator HealthRender()
+    private IEnumerator HealthRender()
     {
-        while(true)
+        while(_healthBar.fillAmount != _health.HealthCount / _health.MaxHealth)
         {
-            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, _health.HealthCount / _health.MaxHealth, Time.deltaTime);
-            yield return new WaitUntil(() => _healthBar.fillAmount != _health.HealthCount / _health.MaxHealth);
+            _healthBar.fillAmount = Mathf.MoveTowards(_healthBar.fillAmount, _health.HealthCount / _health.MaxHealth, Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
